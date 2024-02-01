@@ -34,7 +34,7 @@ using libcamera::Span;
 using libcamera::Stream;
 using libcamera::StreamRole;
 using libcamera::StreamConfiguration;
-using libcamera::Transform;
+//using libcamera::Transform;
 
 namespace controls = libcamera::controls;
 namespace formats = libcamera::formats;
@@ -199,6 +199,7 @@ bool camera_create(const parameters_t *params, camera_frame_cb frame_cb, camera_
         raw_stream_conf.bufferCount = video_stream_conf.bufferCount;
     }
 
+    /*
     conf->transform = Transform::Identity;
     if (params->h_flip) {
         conf->transform = Transform::HFlip * conf->transform;
@@ -206,6 +207,7 @@ bool camera_create(const parameters_t *params, camera_frame_cb frame_cb, camera_
     if (params->v_flip) {
         conf->transform = Transform::VFlip * conf->transform;
     }
+    */
 
     CameraConfiguration::Status vstatus = conf->validate();
     if (vstatus == CameraConfiguration::Invalid) {
